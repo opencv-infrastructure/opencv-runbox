@@ -1,0 +1,5 @@
+<div class="file-preview-container">
+ <a download={{file.name}} ng-href={{getURL()}} class="btn btn-primary btn-xs" title="download..."><span class="glyphicon glyphicon-download-alt"></span> {{file.name}}<span ng-show="file.size"> ({{file.size | bytes}})</span></a>
+ <a ng-href="{{getURL(file.url)}}" target="_blank" class="btn btn-info btn-xs" title="open in new window..."><span class="glyphicon glyphicon-new-window"></span></a>
+ <div ng-include="getTemplate()"></div>
+</div>

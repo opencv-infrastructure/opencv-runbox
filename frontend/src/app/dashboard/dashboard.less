@@ -1,0 +1,26 @@
+.workspace-list {
+ .selectable:hover {
+  background-color: #f0f0f0;
+ }
+ .active {
+  background-color: #f0f0b0;
+  &:hover {
+   background-color: #e0e0a0;
+  }
+ }
+ .readonly {
+  background-color: #d0f0b0;
+  &:hover {
+   background-color: #c0e0a0;
+  }
+ }
+
+ .timestamp {
+  float:right;
+ }
+}
+
+.dashboard-view .workspace-list .timestamp {
+ float:none;
+ display:block;
+}

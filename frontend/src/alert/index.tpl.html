@@ -1,0 +1,22 @@
+<div class="alert-container">
+ <div ng-if="showList && alerts.length !== 0" class="alert-list-container">
+  <alert ng-repeat="alert in alerts | reverse" type="alert.type" close="closeAlert(alert)">
+   {{alert.msg}}
+  </alert>
+ </div>
+ <div class="alert-summary-container">
+  <div class="alert-summary-last-alert">
+   <alert ng-if="showPreview && !showList && alerts.length !== 0" type="alerts[alerts.length - 1].type" close="closeAlert(alerts[alerts.length - 1])">
+    {{alerts[alerts.length - 1].msg}}
+   </alert>
+  </div>
+  <div class="alert-summary-status" ng-click="toggleAlertList()">
+   Status:
+   <span ng-if="getItemCount('danger')" class="label label-danger">{{getItemCount("danger")}}</span>
+   <span ng-if="getItemCount('warning')" class="label label-warning">{{getItemCount("warning")}}</span>
+   <span ng-if="getItemCount('success')" class="label label-success">{{getItemCount("success")}}</span>
+   <span ng-if="getItemCount('info')" class="label label-info">{{getItemCount("info")}}</span>
+   <span ng-if="alerts.length === 0" class="label label-default">No actual messages</span>
+  </div>
+ </div>
+</div>

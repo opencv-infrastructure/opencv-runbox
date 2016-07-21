@@ -1,0 +1,47 @@
+{
+  "name": "webapp",
+  "version": "0.0.0",
+  "description": "Web application",
+  "author": "alalek",
+  "dependencies": {
+    "bower": "latest"
+  },
+  "devDependencies": {
+    "karma-jasmine": "latest",
+    "karma-chrome-launcher": "latest",
+    "gulp": "latest",
+    "gulp-connect": "latest",
+    "coffee-script": "latest",
+    "gulp-inject": "latest",
+    "gulp-coffee": "latest",
+    "gulp-concat": "latest",
+    "gulp-replace": "latest",
+    "karma": "latest",
+    "gulp-karma": "latest",
+    "gulp-changed": "latest",
+    "gulp-util": "latest",
+    "gulp-watch": "latest",
+    "gulp-plumber": "latest",
+    "gulp-if": "latest",
+    "gulp-less": "latest",
+    "gulp-sourcemaps": "latest",
+    "main-bower-files": "latest",
+    "gulp-filter": "~2.0.2",
+    "stream-series": "~0.1.1",
+    "underscore": "~1.7.0",
+    "through2": "~0.6.3",
+    "vinyl": "~0.4.6",
+    "convert-source-map": "~0.4.1",
+    "del": "~1.1.1",
+    "merge-stream": "~0.1.7",
+    "run-sequence": "~1.0.2",
+    "gulp-debug": "~2.0.1",
+    "sort-stream": "~1.0.1"
+  },
+  "scripts": {
+    "postinstall": "bower install --allow-root",
+    "bower": "bower install",
+    "build": "gulp build",
+    "dev": "gulp"
+  }
+}

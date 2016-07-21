@@ -1,0 +1,38 @@
+<span class="operations">
+ <span ng-repeat="operation in storage.operations"
+  ng-click="onClick($event, operation)">
+  <button type="button" class="btn btn-xs" ng-class="'btn-' + (operation.type||'primary')">
+   <span ng-if="operation.glyphicon" ng-class="'glyphicon ' + operation.glyphicon"></span>
+   {{operation.description}}
+  </button>
+ </span>
+</span>
+<editable ng-disabled="workspace.readonly" ng-model="workspace.name" editable-apply="changeName(value)">
+ <i class="field-name">Name:&nbsp;</i><span class="field-value">{{workspace.name}}</span>
+</editable>
+<editable ng-disabled="workspace.readonly" ng-model="workspace.description" editable-apply="changeDescription(value)">
+ <i class="field-name">Description:&nbsp;</i><span class="field-value">{{workspace.description || 'no description'}}</span>
+</editable>
+<br/>
+<div class="commits-container">
+ <div class="commits-header">
+  <i>History: </i>
+  <button ng-disabled="storage.readonly || editor.codeDirty !== true" type="button" class="btn btn-xs btn-default" title="Save..." ng-click="editor.controller.saveChanges()"><span class="glyphicon glyphicon-save"></span></button>
+  <button type="button" class="btn btn-xs btn-info" ng-attr-title="{{storage.readonly?'Restore code...':'Commit...'}}" ng-click="storage.readonly?restoreCode():createCommit()"><span ng-class="'glyphicon ' + (storage.readonly?'glyphicon-open':'glyphicon-tag')"></span></button>
+ </div>
+ <ul class="commits-list">
+  <li ng-repeat="storage in workspace.storage_list track by $index" ng-click="goStorage(storage)">
+   <span class="btn btn-xs btn-default" ng-class="getStorageBtnClass(storage)">
+    <span>{{storage.name}}</span>
+    <span ng-if="getJobIcon(storage)" ng-class="getJobIcon(storage)" ng-attr-title="{{getJobDescription(storage)}}"></span>
+   </span>
+  </li>
+ </ul>
+</div>
+<editable ng-disabled="storage.readonly" editable-template="edit-runconfig" editable-apply="changeRunconfig(value)">
+ <i class="field-name">Run config:&nbsp;</i><span class="field-value">{{getRunconfigDescription()}}</span>
+</editable>
+<br/>
+<editable ng-disabled="storage.readonly" ng-model="storage.runArguments" editable-apply="changeRunArguments(value)">
+ <i class="field-name">Run arguments:&nbsp;</i><span class="field-value">{{storage.runArguments || 'no arguments'}}</span>
+</editable>

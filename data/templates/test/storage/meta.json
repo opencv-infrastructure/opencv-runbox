@@ -1,0 +1,21 @@
+{
+  "runner": "opencv",
+  "codeHighlights": [
+    {
+      "style": "1",
+      "to": {
+        "ch": 79,
+        "line": 42
+      },
+      "from": {
+        "ch": 0,
+        "line": 37
+      }
+    }
+  ],
+  "target": "OpenCV_CPP",
+  "timestamp": 1433155408.0610092,
+  "codeFoldLines": [
+    14
+  ]
+}

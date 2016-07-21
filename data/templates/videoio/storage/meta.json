@@ -1,0 +1,6 @@
+{
+  "target": "OpenCV_CPP",
+  "timestamp": 1433356183.145642,
+  "runner": "opencv",
+  "runArguments": "./input/768x576.mp4 R N"
+}

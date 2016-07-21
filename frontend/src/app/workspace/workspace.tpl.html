@@ -1,0 +1,56 @@
+<div ui-layout class="workspace-container" ui-layout-storage="getUILayoutStorage('ui-workspace-root')">
+ <div ui-layout-container>
+  <div ui-layout options="{ flow : 'column' }" ui-layout-storage="getUILayoutStorage('ui-workspace-dashboard')">
+   <div ui-layout-container size="175px" class="workspace-dashboard">
+    <div class="dashboard-view"/>
+   </div>
+   <div ui-layout-container>
+    <div ui-layout ui-layout-storage="getUILayoutStorage('ui-workspace-body')">
+     <div ui-layout-container>
+      <div class="workspace-code-container">
+       <div class="workspace-header"/>
+       <div code-editor id="workspace-code"/>
+      </div>
+     </div>
+     <div ui-layout-container size="25%" class="workspace-console" title="log output">
+      <textarea class="stretch" readonly wrap="off"></textarea>
+     </div>
+    </div>
+    <div ng-if="notfound" class="not-found ng-cloak">
+     <div>NOT FOUND</div>
+     <a href="#/">Dashboard</a>
+    </div>
+   </div>
+   <div ui-layout-container size="250px" class="workspace-files">
+    <div ui-layout ui-layout-storage="getUILayoutStorage('ui-workspace-files')">
+
+     <div ui-layout-container class="workspace-input">
+      <div class="panel panel-default">
+       <div class="panel-heading">
+        <span>Input files</span><span ng-show="storage.inputs.length"> ({{storage.inputs.length}})</span>
+        <div ng-if="!storage.readonly" ngf-drop ngf-select ngf-change="upload($files)"
+          class="drop-box" ngf-drag-over-class="dragover"
+          ngf-multiple="true" ngf-allow-dir="false" accept="*">Upload</div>
+       </div>
+       <ul class="list-group">
+        <li class="list-group-item"
+          ng-repeat="file in storage.inputs track by file.url+file.timestamp" workspace-file="file" />
+       </ul>
+      </div>
+     </div>
+
+     <div ui-layout-container class="workspace-output">
+      <div class="panel panel-default">
+       <div class="panel-heading">Output files<span ng-show="storage.outputs.length"> ({{storage.outputs.length}})</span></div>
+       <ul class="list-group">
+        <li class="list-group-item"
+          ng-repeat="file in storage.outputs track by file.url+file.timestamp" workspace-file="file" />
+       </ul>
+      </div>
+     </div>
+
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

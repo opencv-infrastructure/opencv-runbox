@@ -1,0 +1,27 @@
+<div ui-layout>
+
+ <div ui-layout-container class="workspace-list">
+  <div class="panel panel-default">
+   <div class="panel-heading">Workspaces</div>
+   <ul class="list-group">
+    <li class="list-group-item selectable"
+      ng-repeat="workspace in workspaces" workspace-list-entry="workspace"
+      ng-class="{'active': isActive(workspace),'readonly': workspace.readonly}"
+      ng-click="onClick($event, workspace)" />
+   </ul>
+  </div>
+ </div>
+
+ <div ui-layout-container class="workspace-list">
+  <div class="panel panel-default">
+   <div class="panel-heading">Templates</div>
+   <ul class="list-group">
+    <li class="list-group-item selectable"
+      ng-repeat="workspace in templates" workspace-list-entry="workspace"
+      ng-class="{'active': isActive(workspace),'readonly': workspace.readonly}"
+      ng-click="onClick($event, workspace)" />
+   </ul>
+  </div>
+ </div>
+
+</div>

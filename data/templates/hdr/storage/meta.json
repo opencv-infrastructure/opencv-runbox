@@ -1,0 +1,6 @@
+{
+  "timestamp": 1433173828.158519,
+  "runner": "opencv",
+  "target": "OpenCV_CPP",
+  "runArguments": "./input"
+}

@@ -1,0 +1,10 @@
+penv
+log
+__pycache__
+*.pyc
+
+# Eclipse
+.project
+.pydevproject
+.settings
+.externalToolBuilders

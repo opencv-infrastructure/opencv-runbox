@@ -1,0 +1,57 @@
+.editable-view {
+ padding: 0px 5px;
+ .field-value {
+  white-space: nowrap;
+  &:hover {
+   text-decoration: underline;
+  }
+ }
+}
+
+editable[disabled='disabled'], .editable[disabled='disabled'] {
+ .field-value {
+  &:hover {
+   text-decoration: inherit;
+  }
+ }
+}
+
+.editable-popup-edit-btn {
+ position: absolute;
+ opacity: 0;
+ z-index: 10010;
+ box-shadow: 0 5px 10px rgba(0,0,0,.5);
+ &.visible {
+  opacity: 1;
+ }
+}
+
+.editable-popup {
+ position: absolute;
+ opacity: 0;
+ z-index: 10010;
+ text-align: left;
+ background-color: #fff;
+ background-clip: padding-box;
+ border: 1px solid #ccc;
+ border: 1px solid rgba(0,0,0,.2);
+ border-radius: 6px;
+ -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+ box-shadow: 0 5px 10px rgba(0,0,0,.2);
+ white-space: normal;
+ &.visible {
+  opacity: 1;
+ }
+ .panel {
+   margin: 0px;
+ }
+ .panel-body {
+  padding: 5px;
+ }
+ .panel-heading {
+  padding: 5px 5px;
+ }
+ .panel-footer {
+  padding: 5px 5px;
+ }
+}

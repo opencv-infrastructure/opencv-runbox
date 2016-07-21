@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "OpenCV_CPP": {
+      "name": "OpenCV C++",
+      "code": "src/main.cpp",
+      "codeExt": "cpp"
+    },
+    "OpenCV_Python": {
+      "name": "OpenCV Python 2.7",
+      "code": "src/main.py",
+      "codeExt": "py"
+    }
+  }
+}

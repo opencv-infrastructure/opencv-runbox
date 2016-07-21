@@ -1,0 +1,36 @@
+<div class="container-fluid">
+ <h1>Welcome to OpenCV RunBox!</h1>
+ <div class="row">
+  <div class="col-sm-12 col-md-6">
+   <div class="panel panel-default workspace-list">
+    <div class="panel-heading">Workspaces</div>
+    <div class="panel-body">
+     Workspace with your experiments
+    </div>
+    <ul class="list-group">
+     <li class="list-group-item selectable"
+       ng-repeat="workspace in workspaces" workspace-list-entry="workspace"
+       ng-click="onClick($event, workspace)"
+       ng-class="{'readonly': workspace.readonly}"
+       workspace-do-operation="doOperation(workspace, operation)" />
+    </ul>
+   </div>
+  </div>
+  <div class="col-sm-12 col-md-6">
+   <div class="panel panel-default workspace-list">
+    <div class="panel-heading">Available templates</div>
+    <div class="panel-body">
+     Prepared set of code and input data. Start from here!
+    </div>
+    <ul class="list-group">
+     <li class="list-group-item selectable"
+       ng-repeat="workspace in templates" workspace-list-entry="workspace"
+       ng-click="onClick($event, workspace)"
+       ng-class="{'readonly': workspace.readonly}"
+       ng-attr-title="{{workspace.readonly?'This is readonly template. Click to Fork it!':'Click to edit'}}"
+       workspace-do-operation="doOperation(workspace, operation)" />
+    </ul>
+   </div>
+  </div>
+ </div>
+</div>

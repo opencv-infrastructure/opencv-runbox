@@ -1,0 +1,6 @@
+{
+  "timestamp": 1433174163.0614378,
+  "runner": "opencv",
+  "target": "OpenCV_CPP",
+  "runArguments": "input/scenetext01.jpg"
+}

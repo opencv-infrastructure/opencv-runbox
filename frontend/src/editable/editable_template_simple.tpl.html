@@ -1,0 +1,4 @@
+<input type="text" ng-model="value">
+<button ng-click="apply()" class="btn btn-success btn-xs" title="Apply"><span class="glyphicon glyphicon-ok"></span></button>
+<button ng-click="cancel()" class="btn btn-danger btn-xs" title="Cancel"><span class="glyphicon glyphicon-remove"></span></button>
+<div ng-if="validationErrorMessage" class="text-danger">{{validationErrorMessage}}</div>

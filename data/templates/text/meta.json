@@ -1,0 +1,11 @@
+{
+  "public": true,
+  "next_commit": 0,
+  "base": null,
+  "timestamp": 1433174196.4160202,
+  "owner": [
+    "7ce1c91a-8613-44e6-8f82-be6285cef822"
+  ],
+  "description": "Text detection and recognition",
+  "name": "Text"
+}

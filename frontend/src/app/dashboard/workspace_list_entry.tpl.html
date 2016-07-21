@@ -1,0 +1,14 @@
+<a ng-click="onClick($event, undefined)">{{e.name}}</a>
+<span class="timestamp">
+ <span am-time-ago="e.timestamp" am-preprocess="unix" ng-attr-title="{{e.timestamp*1000 | date:'yyyy-MM-dd HH:mm:ss'}}"></span>
+</span>
+<div ng-if="withOperations" class="operations">
+ <span ng-repeat="operation in e.operations"
+  ng-click="onClick($event, operation)">
+  <button type="button" class="btn btn-xs" ng-class="'btn-' + (operation.type||'primary')">
+   <span ng-if="operation.glyphicon" ng-class="'glyphicon ' + operation.glyphicon"></span>
+   {{operation.description}}
+  </button>
+ </span>
+</div>
+<div ng-if="e.description" class="description"><i>Description: </i>{{e.description}}</div>
